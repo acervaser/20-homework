@@ -59,10 +59,11 @@ const Timer = ({ timeStart, step , onTick, autostart , infiniti}) => {
     return (
         <div>
             <div>{`0${Math.floor(time / 1000 / 60)}`.slice(-2)}:{`0${time / 1000 % 60}`.slice(-2)}</div>
+            <p>{repetition && "Infiniti mod on"}</p>
             <button onClick={() => setPause(false)}>Start</button>
             <button onClick={() => setPause(true)}>Stop</button>
             <button onClick={handleResetTimer}>Reset</button>
-            <button onClick={handleRepeatTimer}>Repeat</button>
+            <button onClick={handleRepeatTimer}>Repeat on/off</button>
         </div>
 
     )
